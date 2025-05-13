@@ -1,0 +1,29 @@
+<Project>
+	<PropertyGroup>
+		<BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)obj\</BaseIntermediateOutputPath>
+		<BaseOutputPath>$(MSBuildThisFileDirectory)bin\</BaseOutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<TargetFramework>net9.0</TargetFramework>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<!-- 配布先プラットフォーム固有化 -->
+		<PublishSingleFile>true</PublishSingleFile>
+		<!-- 単一 exe 化 -->
+		<SelfContained>false</SelfContained>
+		<!-- .NET ランタイムは別途配布 -->
+		<PublishTrimmed>false</PublishTrimmed>
+		<!-- 未使用コードトリム -->
+		<PublishReadyToRun>true</PublishReadyToRun>
+		<!-- 起動高速化 -->
+		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	</PropertyGroup>
+
+	<!-- 不要なリソース・言語ファイルを除外 -->
+	<ItemGroup>
+		<!-- ロケール言語パックを除去 -->
+		<SatelliteResourceLanguages Remove="de;fr;es;it;ru;zh-Hans;zh-Hant;*" />
+		<!-- Vosk や VoiceVox 用の巨大ファイルは手動でコピー管理 -->
+	</ItemGroup>
+</Project>

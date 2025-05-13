@@ -1,0 +1,99 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<UseWindowsForms>true</UseWindowsForms>
+
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+		<PlatformTarget>x64</PlatformTarget>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<SelfContained>true</SelfContained>
+		<PublishSingleFile>true</PublishSingleFile>
+		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+		<IncludeAllContentForSelfExtract>false</IncludeAllContentForSelfExtract>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+		<PublishReadyToRun>false</PublishReadyToRun>
+
+		<DebugType>embedded</DebugType>
+		<ApplicationIcon>Resources\Icons\app.ico</ApplicationIcon>
+
+		<Version>1.0.0</Version>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+		<Company>ダーさん</Company>
+		<Authors>ダーさん</Authors>
+		<Product>ETS2 FerryAssist</Product>
+		<Description>Euro Truck Simulator 2 ProjectJapan用フェリー案内システム</Description>
+		<Copyright>Copyright c 2025 ダーさん</Copyright>
+		<SignAssembly>False</SignAssembly>
+		<Title>ETS2 FerryAssist</Title>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="GetDependencies.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="NAudio" Version="2.2.1" />
+		<PackageReference Include="System.Data.SQLite" Version="1.0.119" />
+		<PackageReference Include="Vosk" Version="0.3.38" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="SCSSdkClient">
+			<HintPath>$(ProjectDir)lib\SCSSdkClient.dll</HintPath>
+			<Private>true</Private>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Resources\Database\ferry_routes.db">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</None>
+
+		<Content Include="Resources\Icons\app.ico">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+	</ItemGroup>
+	
+	<ItemGroup>
+		<Folder Include="External\VoiceModels\vosk\" />
+		<Folder Include="models\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="models\これは削除してください.txt">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Resources\Database\ferry_routes.db">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+	
+</Project>
