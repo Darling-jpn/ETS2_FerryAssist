@@ -28,7 +28,19 @@
 2. 「Run desktop apps」の「Download x64」をクリック。
 3. ダウンロードした `windowsdesktop-runtime-8.x.x-win-x64.exe` を実行し、インストール。
 
-#### 1-2. VOICEVOX のインストール
+
+#### 1-2. テレメトリーデータ取得用の plugin ダウンロードと設置
+
+1. 以下の URL にアクセスします：
+   [https://github.com/RenCloud/scs-sdk-plugin/releases/tag/V.1.12.1](https://github.com/RenCloud/scs-sdk-plugin/releases/tag/V.1.12.1)
+2. Assets にある release_v_1_12_1.zip(下図の赤枠部分)をダウンロードします：
+3. ダウンロードが終わったら release_v_1_12_1.zip を展開し、Win64 フォルダ内の「scs-telemetry.dll」を
+ETS2 インストールフォルダ(例: Euro Truck Simulator 2\bin\win_x64\plugins)にコピーまたは移
+動します：
+※plugins フォルダがない場合は新規に「plugins」という名前でフォルダを作成し、その中に入れてください。
+
+
+#### 1-3. VOICEVOX のインストール
 
 1. VOICEVOX 公式サイト：[https://voicevox.hiroshiba.jp/](https://voicevox.hiroshiba.jp/)
 2. 「ダウンロード」ボタンから最新版を取得。
