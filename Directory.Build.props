@@ -20,10 +20,4 @@
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 	</PropertyGroup>
 
-	<!-- 不要なリソース・言語ファイルを除外 -->
-	<ItemGroup>
-		<!-- ロケール言語パックを除去 -->
-		<SatelliteResourceLanguages Remove="de;fr;es;it;ru;zh-Hans;zh-Hant;*" />
-		<!-- Vosk や VoiceVox 用の巨大ファイルは手動でコピー管理 -->
-	</ItemGroup>
 </Project>
