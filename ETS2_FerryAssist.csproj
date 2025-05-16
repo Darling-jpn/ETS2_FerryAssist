@@ -10,12 +10,12 @@
 
 		<PlatformTarget>x64</PlatformTarget>
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
-		<SelfContained>true</SelfContained>
+		<SelfContained>false</SelfContained>
 		<PublishSingleFile>true</PublishSingleFile>
 		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
 		<IncludeAllContentForSelfExtract>false</IncludeAllContentForSelfExtract>
 		<InvariantGlobalization>true</InvariantGlobalization>
-		<EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+		<EnableCompressionInSingleFile>false</EnableCompressionInSingleFile>
 		<PublishReadyToRun>false</PublishReadyToRun>
 
 		<DebugType>embedded</DebugType>
@@ -39,7 +39,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="NAudio" Version="2.2.1" />
-		<PackageReference Include="System.Data.SQLite" Version="1.0.119" />
+		<PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
 		<PackageReference Include="Vosk" Version="0.3.38" />
 	</ItemGroup>
 
